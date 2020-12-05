@@ -11,7 +11,12 @@ textBrutTest=f.read()
 matches = re.finditer(r"let (\S+)(?=_tests)[^\[]+(.+?)and",textBrutTest, re.MULTILINE | re.DOTALL)
 for matchNum, match in enumerate(matches, start=1):
     name=match.group(1)
-    print(name+":")
-    for e in testParsing.parseDuneTest(re.sub('[\s+]', '', match.group(2))):
+    tests=testParsing.parseDuneTest(re.sub('[\s+]', '', match.group(2)))
+    print("-----===={"+name+"}====-----")
+    print("Exécution en mode debug:")
+    for e in tests:
         print(testParsing.createTestOcamlBool(name,e))
+    print("\nExécution en mode normale:")
+    for e in tests:
+        print(testParsing.createTestOcamlPrint(name,e))
     print()
