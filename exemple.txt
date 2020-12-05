@@ -1,0 +1,51 @@
+builtin_test_primes.ml:
+
+-----===={is_prime}====-----
+Exécution en mode debug:
+is_prime (2) = (true);;
+is_prime (3) = (true);;
+is_prime (5) = (true);;
+is_prime (7) = (true);;
+is_prime (11) = (true);;
+is_prime (13) = (true);;
+is_prime (4) = (false);;
+is_prime (6) = (false);;
+is_prime (12) = (false);;
+is_prime (45) = (false);;
+is_prime (77) = (false);;
+is_prime (63) = (false);;
+
+Exécution en mode normale:
+let testDune = is_prime (2) in if testDune = (true) then print_string "[OK]is_prime (2) = true\n" else print_string "[ERROR]is_prime (2) <> true\n";;
+let testDune = is_prime (3) in if testDune = (true) then print_string "[OK]is_prime (3) = true\n" else print_string "[ERROR]is_prime (3) <> true\n";;
+let testDune = is_prime (5) in if testDune = (true) then print_string "[OK]is_prime (5) = true\n" else print_string "[ERROR]is_prime (5) <> true\n";;
+let testDune = is_prime (7) in if testDune = (true) then print_string "[OK]is_prime (7) = true\n" else print_string "[ERROR]is_prime (7) <> true\n";;
+let testDune = is_prime (11) in if testDune = (true) then print_string "[OK]is_prime (11) = true\n" else print_string "[ERROR]is_prime (11) <> true\n";;
+let testDune = is_prime (13) in if testDune = (true) then print_string "[OK]is_prime (13) = true\n" else print_string "[ERROR]is_prime (13) <> true\n";;
+let testDune = is_prime (4) in if testDune = (false) then print_string "[OK]is_prime (4) = false\n" else print_string "[ERROR]is_prime (4) <> false\n";;
+let testDune = is_prime (6) in if testDune = (false) then print_string "[OK]is_prime (6) = false\n" else print_string "[ERROR]is_prime (6) <> false\n";;
+let testDune = is_prime (12) in if testDune = (false) then print_string "[OK]is_prime (12) = false\n" else print_string "[ERROR]is_prime (12) <> false\n";;
+let testDune = is_prime (45) in if testDune = (false) then print_string "[OK]is_prime (45) = false\n" else print_string "[ERROR]is_prime (45) <> false\n";;
+let testDune = is_prime (77) in if testDune = (false) then print_string "[OK]is_prime (77) = false\n" else print_string "[ERROR]is_prime (77) <> false\n";;
+let testDune = is_prime (63) in if testDune = (false) then print_string "[OK]is_prime (63) = false\n" else print_string "[ERROR]is_prime (63) <> false\n";;
+
+-----===={is_pseudo_prime}====-----
+Exécution en mode debug:
+is_pseudo_prime (2) ([2;4;8;12]) = (true);;
+is_pseudo_prime (11) ([2;4;5;20]) = (true);;
+is_pseudo_prime (23) ([2;9;15;18]) = (true);;
+is_pseudo_prime (29) ([30;41;52]) = (true);;
+is_pseudo_prime (4) ([2;9;15;18]) = (false);;
+is_pseudo_prime (22) ([30;41;52]) = (false);;
+is_pseudo_prime (15) ([2;9;15;18]) = (false);;
+is_pseudo_prime (27) ([30;41;52]) = (false);;
+
+Exécution en mode normale:
+let testDune = is_pseudo_prime (2) ([2;4;8;12]) in if testDune = (true) then print_string "[OK]is_pseudo_prime (2) ([2;4;8;12]) = true\n" else print_string "[ERROR]is_pseudo_prime (2) ([2;4;8;12]) <> true\n";;
+let testDune = is_pseudo_prime (11) ([2;4;5;20]) in if testDune = (true) then print_string "[OK]is_pseudo_prime (11) ([2;4;5;20]) = true\n" else print_string "[ERROR]is_pseudo_prime (11) ([2;4;5;20]) <> true\n";;
+let testDune = is_pseudo_prime (23) ([2;9;15;18]) in if testDune = (true) then print_string "[OK]is_pseudo_prime (23) ([2;9;15;18]) = true\n" else print_string "[ERROR]is_pseudo_prime (23) ([2;9;15;18]) <> true\n";;
+let testDune = is_pseudo_prime (29) ([30;41;52]) in if testDune = (true) then print_string "[OK]is_pseudo_prime (29) ([30;41;52]) = true\n" else print_string "[ERROR]is_pseudo_prime (29) ([30;41;52]) <> true\n";;
+let testDune = is_pseudo_prime (4) ([2;9;15;18]) in if testDune = (false) then print_string "[OK]is_pseudo_prime (4) ([2;9;15;18]) = false\n" else print_string "[ERROR]is_pseudo_prime (4) ([2;9;15;18]) <> false\n";;
+let testDune = is_pseudo_prime (22) ([30;41;52]) in if testDune = (false) then print_string "[OK]is_pseudo_prime (22) ([30;41;52]) = false\n" else print_string "[ERROR]is_pseudo_prime (22) ([30;41;52]) <> false\n";;
+let testDune = is_pseudo_prime (15) ([2;9;15;18]) in if testDune = (false) then print_string "[OK]is_pseudo_prime (15) ([2;9;15;18]) = false\n" else print_string "[ERROR]is_pseudo_prime (15) ([2;9;15;18]) <> false\n";;
+let testDune = is_pseudo_prime (27) ([30;41;52]) in if testDune = (false) then print_string "[OK]is_pseudo_prime (27) ([30;41;52]) = false\n" else print_string "[ERROR]is_pseudo_prime (27) ([30;41;52]) <> false\n";;
